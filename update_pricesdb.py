@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import requests
 import os
 from ledgergrabber import fiat
@@ -7,7 +9,7 @@ import sys
 from datetime import datetime
 import time
 
-ALPHAVANTAGE_API_KEY = os.environ['ALPHAVANTAGE_API_KEY']
+ALPHAVANTAGE_API_KEY = os.environ.get('ALPHAVANTAGE_API_KEY', sys.argv[2])
 LINE_FMT = "P {as_of} {symbol} {base} {quote}\n"
 EXCLUDE = {"MAPLE", "VMFXX"}
 
